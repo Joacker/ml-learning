@@ -52,4 +52,5 @@ y_pred = regression.predict(X_test)
 # Construir el modelo óptimo de RLM utilizando la Eliminación hacia atrás
 import statsmodels.api as sm
 
-# Añadimos una columna de unos para el término independiente b0
+# Añadimos una columna de unos para el término independiente b0, asi se añade la columna al principio de unos
+X = np.append(arr = np.ones((50, 1)).astype(int), values = X, axis = 1)
