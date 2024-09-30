@@ -48,3 +48,8 @@ regression.fit(X_train, y_train)
 
 # Predicción de los resultados en el conjunto de testing
 y_pred = regression.predict(X_test)
+
+# Construir el modelo óptimo de RLM utilizando la Eliminación hacia atrás
+import statsmodels.api as sm
+
+# Añadimos una columna de unos para el término independiente b0
