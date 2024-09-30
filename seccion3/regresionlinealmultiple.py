@@ -41,3 +41,10 @@ sc_X = StandardScaler()
 X_train = sc_X.fit_transform(X_train)
 X_test = sc_X.transform(X_test)"""
 
+# Ajustar el modelo de Regresión Lineal Múltiple con el conjunto de entrenamiento
+from sklearn.linear_model import LinearRegression
+regression = LinearRegression()
+regression.fit(X_train, y_train)
+
+# Predicción de los resultados en el conjunto de testing
+y_pred = regression.predict(X_test)
