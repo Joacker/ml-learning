@@ -54,3 +54,6 @@ import statsmodels.api as sm
 
 # Añadimos una columna de unos para el término independiente b0, asi se añade la columna al principio de unos
 X = np.append(arr = np.ones((50, 1)).astype(int), values = X, axis = 1)
+X_opt = X[:, [0, 1, 2, 3, 4, 5]]
+SL = 0.05
+regression_OLS = sm.OLS(endog = y, exog = X_opt).fit()
