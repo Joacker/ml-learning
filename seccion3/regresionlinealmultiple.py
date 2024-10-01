@@ -49,11 +49,16 @@ regression.fit(X_train, y_train)
 # Predicción de los resultados en el conjunto de testing
 y_pred = regression.predict(X_test)
 
-# Construir el modelo óptimo de RLM utilizando la Eliminación hacia atrás
-import statsmodels.api as sm
 
-# Añadimos una columna de unos para el término independiente b0, asi se añade la columna al principio de unos
-X = np.append(arr = np.ones((50, 1)).astype(int), values = X, axis = 1)
-X_opt = X[:, [0, 1, 2, 3, 4, 5]]
+# Construir el modelo óptimo de RLM utilizando la Eliminación hacia atrás
+import statsmodels.regression.linear_model as sm
+
+X = np.append(arr = np.ones((50,1)).astype(int), values =X ,axis=1)
+
 SL = 0.05
-regression_OLS = sm.OLS(endog = y, exog = X_opt).fit()
+
+X_opt = X[:,[0,1,2,3,4,5]].tolist()
+
+regression_OLS = sm.OLS(endog=y, exog=X_opt).fit()
+
+regression_OLS.summary()
