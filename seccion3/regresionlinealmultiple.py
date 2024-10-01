@@ -58,7 +58,21 @@ X = np.append(arr = np.ones((50,1)).astype(int), values =X ,axis=1)
 SL = 0.05
 
 X_opt = X[:,[0,1,2,3,4,5]].tolist()
-
 regression_OLS = sm.OLS(endog=y, exog=X_opt).fit()
+regression_OLS.summary()
 
+X_opt = X[:,[0,1,2,4,5]].tolist()
+regression_OLS = sm.OLS(endog=y, exog=X_opt).fit()
+regression_OLS.summary()
+
+X_opt = X[:,[0,3,4,5]].tolist()
+regression_OLS = sm.OLS(endog=y, exog=X_opt).fit()
+regression_OLS.summary()
+
+X_opt = X[:,[0,3,5]].tolist()
+regression_OLS = sm.OLS(endog=y, exog=X_opt).fit()
+regression_OLS.summary()
+
+X_opt = X[:,[0,3]].tolist()
+regression_OLS = sm.OLS(endog=y, exog=X_opt).fit()
 regression_OLS.summary()
